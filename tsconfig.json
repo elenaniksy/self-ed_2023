@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+      "jsx": "react-jsx",
+      "target": "es6",
+      "lib": ["dom", "dom.iterable", "esnext"],
+      "allowJs": true,
+      "skipLibCheck": true,
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "strict": true,
+      "forceConsistentCasingInFileNames": true,
+      "module": "ESnext",
+      "moduleResolution": "node",
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "noImplicitAny": false,
+      "noFallthroughCasesInSwitch": true
+    },
+    "include": ["src", "index.d.ts", "webpack.config.ts"],
+    "ts-node": {
+        "compilerOptions": {
+            "module": "CommonJS",
+        }
+    }
+  }
+  
