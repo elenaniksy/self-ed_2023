@@ -15,7 +15,7 @@
       "isolatedModules": true,
       "noImplicitAny": false,
       "noFallthroughCasesInSwitch": true,
-      "baseUrl": "."
+      // "baseUrl": "."
     },
     "include": ["src", "index.d.ts", "webpack.config.ts"],
     "ts-node": {
