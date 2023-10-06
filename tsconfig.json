@@ -14,7 +14,8 @@
       "resolveJsonModule": true,
       "isolatedModules": true,
       "noImplicitAny": false,
-      "noFallthroughCasesInSwitch": true
+      "noFallthroughCasesInSwitch": true,
+      "baseUrl": "."
     },
     "include": ["src", "index.d.ts", "webpack.config.ts"],
     "ts-node": {
