@@ -18,3 +18,8 @@
     @include flex($justify: center);
     width: 100%;
 }
+
+.lang {
+    margin-right: 20px;
+    color: var(--inverted-primary-color);
+}
