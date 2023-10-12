@@ -1,15 +1,14 @@
+@import '../../../app/styles/index.scss';
+
 .Navbar {
     width: 100%;
     height: var(--navbar-height);
     background: var(--inverted-bg-color);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex($justify: flex-end);
     padding: 20px;
 
     .links {
-       display: flex;
-       justify-content: flex-end;
+    @include flex($justify: flex-end);
        > * {
         &:not(:last-child) {
             margin-right: 10px;
