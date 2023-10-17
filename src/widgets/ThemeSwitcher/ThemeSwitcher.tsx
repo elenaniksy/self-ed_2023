@@ -14,7 +14,14 @@ interface ThemeSwitcherProps {
 export const ThemeSwitcher = ({ className = '' }: ThemeSwitcherProps) => {
     const { toggleTheme, isThemeDark } = useTheme();
     return (
-        <Button className={classNames(cls.ThemeSwitcher, {}, [className])} onClick={toggleTheme}>
+        <Button
+            className={classNames(
+                cls.ThemeSwitcher,
+                {},
+                [className],
+            )}
+            onClick={toggleTheme}
+        >
             {isThemeDark ? <DarkIcon /> : <LightIcon />}
         </Button>
     );

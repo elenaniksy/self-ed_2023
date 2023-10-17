@@ -4,7 +4,13 @@ import webpack from 'webpack';
 
 import { BuildOptions } from './types/config';
 
-export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
+export function buildPlugins(
+    {
+        paths,
+        isDev,
+    }: BuildOptions,
+):
+    webpack.WebpackPluginInstance[] {
     return [
         new HTMLWebpackPlugin({
             template: paths.html,
