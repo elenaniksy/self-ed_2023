@@ -7,6 +7,5 @@ export function classNames(cls: string, mods: Mods = {}, additional: string[] = 
         ...Object.entries(mods)
             .filter(([classNames, value]) => Boolean(value))
             .map(([classNames]) => classNames),
-
     ].join(' ');
 }
