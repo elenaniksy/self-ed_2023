@@ -3,7 +3,7 @@
 @import "variables/colors";
 @import "themes/dark";
 @import "themes/normal";
-@import "mixins/layout.scss";
+@import "mixins/layout";
 
 .app {
     font: var(--font-m);
@@ -13,7 +13,7 @@
 }
 
 .content-page {
-   display: flex;
+    display: flex;
 }
 
 .page-wrapper {

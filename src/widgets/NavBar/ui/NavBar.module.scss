@@ -1,18 +1,21 @@
-@import '../../../app/styles/index.scss';
+@import '../../../app/styles/index';
 
 .Navbar {
     width: 100%;
     height: var(--navbar-height);
     background: var(--inverted-bg-color);
+
     @include flex($justify: flex-end);
+
     padding: 20px;
 
     .links {
-    @include flex($justify: flex-end);
-       > * {
-        &:not(:last-child) {
-            margin-right: 10px;
+        @include flex($justify: flex-end);
+
+        > * {
+            &:not(:last-child) {
+                margin-right: 10px;
+            }
         }
-       }
     }
 }
