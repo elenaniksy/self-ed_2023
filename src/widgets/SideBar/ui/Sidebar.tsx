@@ -1,16 +1,16 @@
-import { useState } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { LangSwitcher } from 'widgets/LangSwitcher/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher/ThemeSwitcher';
-
+import { LangSwitcher } from 'widgets/LangSwitcher/LangSwitcher';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
+
 import cls from './SideBar.module.scss';
 
 interface SideBarProps {
   className?: string;
 }
 
-export const SideBar = ({ className = '' }: SideBarProps) => {
+export function SideBar({ className = '' }: SideBarProps) {
     const { t } = useTranslation();
     const [collapsed, setCollapsed] = useState<boolean>(false);
 
@@ -33,4 +33,4 @@ export const SideBar = ({ className = '' }: SideBarProps) => {
             </div>
         </div>
     );
-};
+}
