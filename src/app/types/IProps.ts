@@ -1,5 +1,5 @@
 import React from 'react';
 
-export interface FCProps {
+export interface IProps {
   children: React.ReactNode;
 }
