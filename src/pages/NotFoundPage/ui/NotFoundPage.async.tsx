@@ -1,10 +1,10 @@
 import { lazy } from 'react';
 
-export const MainPageAsync = lazy(
+export const NotFoundPageAsync = lazy(
   () =>
     new Promise((resolve) => {
       // @ts-ignore
       // ТОЛЬКО ДЛЯ ИМИТАЦИИ ЗАГРУЗКИ
-      setTimeout(() => resolve(import('./MainPage')), 1500);
+      setTimeout(() => resolve(import('./NotFoundPage')), 1500);
     }),
 );
