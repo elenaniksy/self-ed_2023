@@ -4,10 +4,11 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 
+import { Button } from 'shared/ui/Button/Button';
 import cls from './SideBar.module.scss';
 
 interface SideBarProps {
-  className?: string;
+    className?: string;
 }
 
 export function SideBar({ className = '' }: SideBarProps) {
@@ -18,15 +19,18 @@ export function SideBar({ className = '' }: SideBarProps) {
 
     return (
         <div
+            data-testid="sidebar"
             className={classNames(
                 cls.SideBar,
-                { [cls.collapsed]: collapsed },
+                {
+                    [cls.collapsed]: collapsed,
+                },
                 [className],
             )}
         >
-            <button type="button" onClick={onToggle}>
+            <Button data-testid="sidebar-toggle" type="button" onClick={onToggle}>
                 {t('Свернуть')}
-            </button>
+            </Button>
             <div className={cls.switchers}>
                 <ThemeSwitcher />
                 <LangSwitcher className={cls.lang} />

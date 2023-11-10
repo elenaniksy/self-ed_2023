@@ -20,11 +20,10 @@
         "*": ["./src/*"],
       }
     },
-    "include": ["src", "index.d.ts", "webpack.config.ts"],
+    "include": ["src", "index.d.ts", "webpack.config.ts", "config/jest/setupTest.ts"],
     "ts-node": {
         "compilerOptions": {
             "module": "CommonJS",
         }
-    }
-  }
-  
+    },
+}
