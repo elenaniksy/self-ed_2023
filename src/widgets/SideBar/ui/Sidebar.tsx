@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { Button } from 'shared/ui/Button/Button';
 import cls from './SideBar.module.scss';
 
-interface SideBarProps {
+export interface SideBarProps {
     className?: string;
 }
 
