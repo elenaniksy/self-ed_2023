@@ -25,7 +25,10 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
     }
 
     render() {
-        if (this.state.hasError) {
+        const { hasError } = this.state;
+        const { children } = this.props;
+
+        if (hasError) {
             return (
                 <Suspense fallback="">
                     <PageError />
@@ -33,6 +36,6 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
             );
         }
 
-        return this.props.children;
+        return children;
     }
 }

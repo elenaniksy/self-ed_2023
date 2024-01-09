@@ -10,7 +10,13 @@ interface NotFoundPageProps {
 function NotFoundPage({ className = '' }: NotFoundPageProps) {
     const { t } = useTranslation('router');
 
-    return <div className={classNames(cls.NotFountPage, {}, [className])}>{t('Страница не найдена')}</div>;
+    return (
+        <div
+            className={classNames(cls.NotFountPage, {}, [className])}
+        >
+            {t('Страница не найдена')}
+        </div>
+    );
 }
 
 export default NotFoundPage;
