@@ -1,7 +1,8 @@
 @import '../../../app/styles/index';
 
 .NotFountPage {
-  @include flex($justify: center);
-  font: var(--font-l);
-  height: 100%;
+	@include flex($justify: center);
+
+	font: var(--font-l);
+	height: 100%;
 }

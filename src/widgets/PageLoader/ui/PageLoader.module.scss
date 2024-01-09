@@ -1,8 +1,10 @@
 @import '../../../app/styles/index';
 
 .PageLoader {
-  min-height: calc(100vh - var(--navbar-height));
-  @include flex($justify: center);
-  flex-grow: 1;
+	min-height: calc(100vh - var(--navbar-height));
+
+	@include flex($justify: center);
+
+	flex-grow: 1;
 }
 

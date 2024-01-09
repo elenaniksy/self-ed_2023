@@ -1,25 +1,25 @@
 @mixin font($size, $height: 24px, $weight: 400, $style: normal, $align: left) {
-    font-size: $size;
-    font-style: $style;
-    font-weight: $weight;
-    line-height: $height;
-    text-align: $align;
+	font-size: $size;
+	font-style: $style;
+	font-weight: $weight;
+	line-height: $height;
+	text-align: $align;
 }
   
 @mixin flex($display: flex, $direction: row, $justify: space-between, $align: center) {
-    display: $display;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: $align;
+	display: $display;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
 }
   
 @mixin columns($width, $display: flex, $wrap: nowrap, $justify: space-between) {
-    display: $display;
-    flex-wrap: $wrap;
-    justify-content: $justify;
+	display: $display;
+	flex-wrap: $wrap;
+	justify-content: $justify;
 
-    >* {
-        flex-basis: $width;
-    }
+	>* {
+		flex-basis: $width;
+	}
 }
   
