@@ -11,13 +11,14 @@ export enum Language {
 
 interface LangSwitcherProps {
   className?: string;
+  short?: boolean;
 }
 
-export function LangSwitcher({ className = '' }: LangSwitcherProps) {
+export function LangSwitcher({ className = '', short }: LangSwitcherProps) {
     const { t, i18n } = useTranslation();
 
-    const toggleLanguage = async () => {
-        i18n.changeLanguage(
+    const toggleLanguage = async (): Promise<void> => {
+        await i18n.changeLanguage(
             i18n.language === Language.RU
                 ? Language.EN
                 : Language.RU,
@@ -33,7 +34,7 @@ export function LangSwitcher({ className = '' }: LangSwitcherProps) {
             )}
             onClick={toggleLanguage}
         >
-            {t('Язык')}
+            {t(short ? 'Короткий язык' : 'Язык')}
         </Button>
     );
 }
