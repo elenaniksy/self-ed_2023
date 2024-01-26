@@ -5,11 +5,15 @@
 @import "themes/normal";
 @import "mixins/layout";
 
+body {
+  font: var(--font-m);
+  color: var(--primary-color);
+  background: var(--bg-color);
+}
+
 .app {
-    font: var(--font-m);
-    background: var(--bg-color);
-    color: var(--primary-color);
-    min-height: 100vh;
+  min-height: 100vh;
+  background: var(--bg-color);
 }
 
 .content-page {
