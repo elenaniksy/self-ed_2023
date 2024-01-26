@@ -12,7 +12,11 @@ export default {
     component: Modal,
 } as Meta<typeof Modal>;
 
-const Template: StoryFn<typeof Modal> = (args) => <Modal {...args} />;
+const Template: StoryFn<typeof Modal> = (args) => (
+    <Modal {...args}>
+        Lorem100
+    </Modal>
+);
 
 export const Normal = Template.bind({});
 Normal.args = {
