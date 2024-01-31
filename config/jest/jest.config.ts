@@ -1,6 +1,9 @@
 import * as path from 'path';
 
 export default {
+    globals: {
+        __IS_DEV__: true,
+    },
     clearMocks: true,
     testEnvironment: 'jsdom',
     coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
@@ -8,7 +11,6 @@ export default {
     moduleDirectories: ['node_modules'],
     modulePaths: ['<rootDir>src'],
     testMatch: [
-        // Обнаружилась разница между МАК ОС и ВИНДОУС!!!
         '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
     ],
     rootDir: '../../',
