@@ -12,6 +12,9 @@ describe('Counter', () => {
         ComponentRender(<Counter />, {
             initialState: {
                 counter: { value: 10 },
+                user: {
+                    authData: undefined,
+                },
             },
         });
         expect(screen.getByTestId('counter-value')).toHaveTextContent('10');
@@ -19,7 +22,12 @@ describe('Counter', () => {
 
     test('increment', async () => {
         ComponentRender(<Counter />, {
-            initialState: { counter: { value: 10 } },
+            initialState: {
+                counter: { value: 10 },
+                user: {
+                    authData: undefined,
+                },
+            },
         });
         await userEvent.click(screen.getByTestId('increment'));
         expect(screen.getByTestId('counter-value')).toHaveTextContent('11');
@@ -29,6 +37,9 @@ describe('Counter', () => {
         ComponentRender(<Counter />, {
             initialState: {
                 counter: { value: 10 },
+                user: {
+                    authData: undefined,
+                },
             },
         });
         await userEvent.click(screen.getByTestId('decrement'));

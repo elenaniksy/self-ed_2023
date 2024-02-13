@@ -1,0 +1,16 @@
+@import '../../../../app/styles/index';
+
+.LoginForm {
+  @include flex($direction: column);
+  width: 400px;
+
+  .input {
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .loginBtn {
+    margin-top: 15px;
+    margin-left: auto;
+  }
+}

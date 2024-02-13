@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 
 import type { FC } from 'react';
 import { useCallback, useState } from 'react';
-import { Modal } from 'shared/ui/Modal/Modal';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { LoginModal } from 'features/authByUsername';
 import cls from './NavBar.module.scss';
 
 interface NavBarProps {
@@ -15,8 +15,12 @@ export const NavBar: FC<NavBarProps> = ({ className = '' }) => {
     const { t } = useTranslation('router');
     const [isAuthModal, setIsAuthModal] = useState<boolean>(false);
 
-    const onToggleModal = useCallback((): void => {
-        setIsAuthModal((prev) => !prev);
+    const onCloseModal = useCallback((): void => {
+        setIsAuthModal(false);
+    }, []);
+
+    const onShowModal = useCallback((): void => {
+        setIsAuthModal(true);
     }, []);
 
     return (
@@ -24,13 +28,14 @@ export const NavBar: FC<NavBarProps> = ({ className = '' }) => {
             <Button
                 theme={ButtonTheme.CLEAR_INVERTED}
                 className={cls.links}
-                onClick={onToggleModal}
+                onClick={onShowModal}
             >
                 {t('Войти')}
             </Button>
-            <Modal isOpen={isAuthModal} onClose={onToggleModal}>
-                Авторизация
-            </Modal>
+            <LoginModal
+                isOpen={isAuthModal}
+                onClose={onCloseModal}
+            />
         </div>
     );
 };

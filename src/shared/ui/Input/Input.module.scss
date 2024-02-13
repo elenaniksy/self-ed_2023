@@ -1,0 +1,21 @@
+@import '../../../app/styles/index';
+
+.InputWrapper {
+  @include flex($direction: column, $align: flex-start);
+  width: 100%;
+
+  .input {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .label {
+    margin-right: 5px;
+  }
+}
