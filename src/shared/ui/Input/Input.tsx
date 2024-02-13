@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import React, { InputHTMLAttributes, memo, useState } from 'react';
+import React, { InputHTMLAttributes, memo } from 'react';
 import cls from './Input.module.scss';
 
 interface IInput extends Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>{
