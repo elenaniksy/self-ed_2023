@@ -5,10 +5,13 @@
 @import "themes/normal";
 @import "mixins/layout";
 
-.app {
+body {
   font: var(--font-m);
-  min-height: 100vh;
   color: var(--primary-color);
+}
+
+.app {
+  min-height: 100vh;
   background: var(--bg-color);
 }
 
