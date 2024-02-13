@@ -6,6 +6,7 @@ import React, {
 } from 'react';
 import { IProps } from 'app/types/IProps';
 import { Portal } from 'shared/ui/Portal/Portal';
+import { useTheme } from 'app/providers/ThemeProvider';
 import cls from './Modal.module.scss';
 
 interface ModalProps extends IProps {
@@ -19,6 +20,7 @@ const ANIMATION_DELAY = 300;
 export const Modal: FC<ModalProps> = ({
     className = '', children, isOpen, onClose,
 }) => {
+    const { theme } = useTheme();
     const [isClosing, setIsClosing] = useState<boolean>(false);
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
@@ -59,7 +61,7 @@ export const Modal: FC<ModalProps> = ({
 
     return (
         <Portal element={document.getElementById('app') || document.body}>
-            <div className={classNames(cls.Modal, mods, [className])}>
+            <div className={classNames(cls.Modal, mods, [className, theme])}>
                 <div className={cls.overlay} onClick={onCloseHandler}>
                     <div
                         className={cls.content}
