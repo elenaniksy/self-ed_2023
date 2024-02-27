@@ -9,6 +9,11 @@ describe('getCounterValue', () => {
             user: {
                 authData: undefined,
             },
+            loginForm: {
+                username: '',
+                password: '',
+                isLoading: false,
+            },
         };
         expect(getCounterValueSelector(state)).toEqual(10);
     });

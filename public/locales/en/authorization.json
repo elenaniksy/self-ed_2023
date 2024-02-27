@@ -1,5 +1,7 @@
 {
   "Логин": "Username",
   "Пароль": "Password",
-  "Войти": "Login"
+  "Войти": "Login",
+  "Форма авторизации": "Authorization",
+  "Вы ввели неверный логин или пароль": "Uncorrected username or password"
 }

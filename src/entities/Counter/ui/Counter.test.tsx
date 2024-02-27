@@ -15,6 +15,11 @@ describe('Counter', () => {
                 user: {
                     authData: undefined,
                 },
+                loginForm: {
+                    username: '',
+                    password: '',
+                    isLoading: false,
+                },
             },
         });
         expect(screen.getByTestId('counter-value')).toHaveTextContent('10');
@@ -26,6 +31,11 @@ describe('Counter', () => {
                 counter: { value: 10 },
                 user: {
                     authData: undefined,
+                },
+                loginForm: {
+                    username: '',
+                    password: '',
+                    isLoading: false,
                 },
             },
         });
@@ -39,6 +49,11 @@ describe('Counter', () => {
                 counter: { value: 10 },
                 user: {
                     authData: undefined,
+                },
+                loginForm: {
+                    username: '',
+                    password: '',
+                    isLoading: false,
                 },
             },
         });

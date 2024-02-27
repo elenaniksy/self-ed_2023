@@ -5,6 +5,8 @@ import type { FC } from 'react';
 import { useCallback, useState } from 'react';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/authByUsername';
+import { useAppDispatch, useAppSelector } from 'shared/hooks/store.hook';
+import { getUserAuthData, userActions } from 'entities/User';
 import cls from './NavBar.module.scss';
 
 interface NavBarProps {
@@ -14,7 +16,8 @@ interface NavBarProps {
 export const NavBar: FC<NavBarProps> = ({ className = '' }) => {
     const { t } = useTranslation('router');
     const [isAuthModal, setIsAuthModal] = useState<boolean>(false);
-
+    const authData = useAppSelector(getUserAuthData);
+    const dispatch = useAppDispatch();
     const onCloseModal = useCallback((): void => {
         setIsAuthModal(false);
     }, []);
@@ -23,15 +26,30 @@ export const NavBar: FC<NavBarProps> = ({ className = '' }) => {
         setIsAuthModal(true);
     }, []);
 
+    const onLogOut = useCallback((): void => {
+        dispatch(userActions.logout());
+    }, [dispatch]);
+
     return (
         <div className={classNames(cls.Navbar, {}, [className])}>
-            <Button
-                theme={ButtonTheme.CLEAR_INVERTED}
-                className={cls.links}
-                onClick={onShowModal}
-            >
-                {t('Войти')}
-            </Button>
+            {authData
+                ? (
+                    <Button
+                        theme={ButtonTheme.CLEAR_INVERTED}
+                        className={cls.links}
+                        onClick={onLogOut}
+                    >
+                        {t('Выйти')}
+                    </Button>
+                ) : (
+                    <Button
+                        theme={ButtonTheme.CLEAR_INVERTED}
+                        className={cls.links}
+                        onClick={onShowModal}
+                    >
+                        {t('Войти')}
+                    </Button>
+                )}
             <LoginModal
                 isOpen={isAuthModal}
                 onClose={onCloseModal}

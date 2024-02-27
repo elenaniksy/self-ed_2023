@@ -1,3 +1,5 @@
+@import "./colors";
+
 :root {
 	--font-family-main: consolas, "Times New Roman", serif;
 	--font-size-m: 16px;
@@ -20,4 +22,6 @@
 
 	// Цвета
 	--overlay-color: rgb(0 0 0 / 60%);
+	--error-light: #FF3334;
+	--error-dark: #B22323;
 }
