@@ -1,8 +1,9 @@
 @import '../../../app/styles/index';
 
 .InputWrapper {
-  @include flex($direction: column, $align: flex-start);
   width: 100%;
+
+  @include flex($direction: column, $align: flex-start);
 
   .input {
     background: transparent;
