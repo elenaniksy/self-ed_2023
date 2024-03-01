@@ -4,7 +4,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Suspense, useEffect } from 'react';
 import { useTheme } from 'app/providers/ThemeProvider/lib/useTheme';
 import { AppRouter } from 'app/providers/Router';
-import { useAppDispatch } from 'shared/hooks/store.hook';
+import { useAppDispatch } from 'app/providers/StoreProvider/config/store.hook';
 import { userActions } from 'entities/User';
 
 function App() {

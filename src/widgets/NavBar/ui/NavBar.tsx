@@ -5,7 +5,7 @@ import type { FC } from 'react';
 import { useCallback, useState } from 'react';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/authByUsername';
-import { useAppDispatch, useAppSelector } from 'shared/hooks/store.hook';
+import { useAppDispatch, useAppSelector } from 'app/providers/StoreProvider/config/store.hook';
 import { getUserAuthData, userActions } from 'entities/User';
 import cls from './NavBar.module.scss';
 
@@ -50,10 +50,12 @@ export const NavBar: FC<NavBarProps> = ({ className = '' }) => {
                         {t('Войти')}
                     </Button>
                 )}
-            <LoginModal
-                isOpen={isAuthModal}
-                onClose={onCloseModal}
-            />
+            {isAuthModal && (
+                <LoginModal
+                    isOpen={isAuthModal}
+                    onClose={onCloseModal}
+                />
+            )}
         </div>
     );
 };
