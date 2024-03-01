@@ -1,6 +1,6 @@
 import {
-    configureStore,
-    ReducersMapObject,
+    configureStore, EnhancedStore,
+    ReducersMapObject, Tuple, UnknownAction,
 } from '@reduxjs/toolkit';
 import { IStateSchema } from 'app/providers/StoreProvider';
 import { counterReducer } from 'entities/Counter';
@@ -8,6 +8,7 @@ import { userReducer } from 'entities/User';
 import {
     createReducerManager,
 } from 'app/providers/StoreProvider/config/reducerManager';
+import { Middlewares } from '@reduxjs/toolkit/dist/configureStore';
 
 export function createReduxStore(
     initialState?: IStateSchema,
