@@ -3,12 +3,13 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { Input } from 'shared/ui/Input/Input';
 import { memo, useCallback } from 'react';
-import { useAppDispatch, useAppSelector } from 'app/providers/StoreProvider/config/store.hook';
 import { Text, ETextTheme } from 'shared/ui/Text/Text';
 import {
     DynamicModuleLoader,
     TReducersList,
 } from 'shared/lib/component/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useAppSelector } from 'app/providers/StoreProvider';
 import {
     loginByUsername,
 } from '../../model/services/loginByUsername/loginByUsername';
@@ -38,14 +39,16 @@ const LoginForm = memo(({ className = '', onClose }: ILoginFormProps) => {
         dispatch(loginActions.setPassword(value));
     }, [dispatch]);
 
-    const onLoginClick = useCallback(() => {
+    const onLoginClick = useCallback(async () => {
         if (loginFormState) {
-            dispatch(loginByUsername({
+            const response = await dispatch(loginByUsername({
                 username: loginFormState?.username,
                 password: loginFormState?.password,
             }));
+            if (response.meta.requestStatus === 'fulfilled') {
+                onClose?.();
+            }
         }
-        onClose?.();
     }, [dispatch, onClose, loginFormState]);
 
     return (

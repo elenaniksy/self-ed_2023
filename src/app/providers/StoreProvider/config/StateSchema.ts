@@ -9,6 +9,7 @@ import {
 } from '@reduxjs/toolkit';
 // @ts-ignore
 import { CombinedState } from 'redux';
+import { IProfileSchema } from 'entities/Profile';
 
 export interface IStateSchema {
   counter: ICounterSchema;
@@ -16,6 +17,7 @@ export interface IStateSchema {
 
   // асинхронные редьюсеры
   loginForm?: ILoginSchema;
+  profile?: IProfileSchema;
 }
 
 export type TStateSchemaKey = keyof IStateSchema;

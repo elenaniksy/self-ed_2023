@@ -1,19 +1,19 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 
-import type { FC } from 'react';
-import { useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/authByUsername';
-import { useAppDispatch, useAppSelector } from 'app/providers/StoreProvider/config/store.hook';
 import { getUserAuthData, userActions } from 'entities/User';
+import { useAppSelector } from 'app/providers/StoreProvider';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import cls from './NavBar.module.scss';
 
 interface NavBarProps {
   className?: string;
 }
 
-export const NavBar: FC<NavBarProps> = ({ className = '' }) => {
+export const NavBar = memo(({ className = '' }: NavBarProps) => {
     const { t } = useTranslation('router');
     const [isAuthModal, setIsAuthModal] = useState<boolean>(false);
     const authData = useAppSelector(getUserAuthData);
@@ -58,4 +58,4 @@ export const NavBar: FC<NavBarProps> = ({ className = '' }) => {
             )}
         </div>
     );
-};
+});

@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "Елена",
+    "lastname": "Никонова",
+    "age": 38,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Saint-Petersburg",
+    "username": "admin",
+    "avatar": "https://disk.yandex.ru/i/yAP2cexM4VAFyA"
+  }
 }

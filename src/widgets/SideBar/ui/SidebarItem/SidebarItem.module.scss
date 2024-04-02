@@ -1,0 +1,24 @@
+@import '../../../../app/styles/index';
+
+.SidebarItem {
+  .link {
+    padding: 5px 0;
+
+    @include flex;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    fill: var(--inverted-primary-color);
+  }
+
+  .collapsed {
+    .text {
+      opacity: 0;
+      transition: 0.2s ease-out opacity;
+      width: 0;
+    }
+  }
+}

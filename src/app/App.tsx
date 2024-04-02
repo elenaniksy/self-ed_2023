@@ -4,8 +4,8 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Suspense, useEffect } from 'react';
 import { useTheme } from 'app/providers/ThemeProvider/lib/useTheme';
 import { AppRouter } from 'app/providers/Router';
-import { useAppDispatch } from 'app/providers/StoreProvider/config/store.hook';
 import { userActions } from 'entities/User';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 function App() {
     const { theme } = useTheme();
