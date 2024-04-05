@@ -26,7 +26,7 @@ const initialReducers: TReducersList = {
     loginForm: loginReducer,
 };
 
-const LoginForm = memo(({ className = '', onClose }: ILoginFormProps) => {
+const LoginForm = memo(({ className, onClose }: ILoginFormProps) => {
     const { t } = useTranslation('authorization');
     const dispatch = useAppDispatch();
     const loginFormState = useAppSelector(getLoginState);

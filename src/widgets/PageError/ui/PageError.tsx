@@ -8,7 +8,7 @@ interface PageErrorProps {
     className?: string;
 }
 
-export function PageError({ className = '' }: PageErrorProps) {
+export function PageError({ className }: PageErrorProps) {
     const { t } = useTranslation();
 
     // eslint-disable-next-line no-restricted-globals

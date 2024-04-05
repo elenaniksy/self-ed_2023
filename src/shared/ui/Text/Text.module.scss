@@ -1,11 +1,13 @@
-.title {
-    font: var(--font-l);
-    color: var(--primary-color);
-}
+.primary {
+    .title {
+        font: var(--font-l);
+        color: var(--primary-color);
+    }
 
-.text {
-    font: var(--font-m);
-    color: var(--secondary-color);
+    .text {
+        font: var(--font-m);
+        color: var(--secondary-color);
+    }
 }
 
 .error {
@@ -15,5 +17,15 @@
 
     .text {
         color: var(--error-dark);
+    }
+}
+
+.info {
+    .title {
+        color: var(--inverted-bg-color);
+    }
+
+    .text {
+        color: var(--inverted-bg-color);
     }
 }

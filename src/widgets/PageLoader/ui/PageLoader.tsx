@@ -7,7 +7,7 @@ interface PageLoaderProps {
   className?: string;
 }
 
-export function PageLoader({ className = '' }: PageLoaderProps) {
+export function PageLoader({ className }: PageLoaderProps) {
     return (
         <div className={classNames(cls.PageLoader, {}, [className])}>
             <Loader />

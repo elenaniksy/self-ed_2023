@@ -1,0 +1,32 @@
+@import '../../../../app/styles/index';
+
+.ProfileCard {
+  padding: 20px;
+  border: 2px solid var(--inverted-bg-color);
+
+  .header {
+    @include flex($direction: row);
+  }
+
+  .editBtn {
+    margin-left: auto;
+  }
+
+  .data {
+    margin-top: 30px;
+  }
+
+  .row {
+    margin-bottom: 10px;
+    max-width: 600px;
+    width: 100%;
+
+    @include flex($direction: row);
+  }
+
+  .text {
+    white-space: nowrap;
+    margin-right: 10px;
+    font-weight: bold;
+  }
+}

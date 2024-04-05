@@ -7,7 +7,7 @@ interface NotFoundPageProps {
     className?: string;
 }
 
-function NotFoundPage({ className = '' }: NotFoundPageProps) {
+function NotFoundPage({ className }: NotFoundPageProps) {
     const { t } = useTranslation('router');
 
     return (

@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 
 import type { FC } from 'react';
 import React, {
@@ -18,7 +18,7 @@ interface ModalProps extends IProps {
 const ANIMATION_DELAY = 300;
 
 export const Modal: FC<ModalProps> = ({
-    className = '',
+    className,
     children,
     isOpen,
     onClose,
@@ -28,7 +28,7 @@ export const Modal: FC<ModalProps> = ({
     const [isClosing, setIsClosing] = useState<boolean>(false);
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
     };

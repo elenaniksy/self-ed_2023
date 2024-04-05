@@ -12,7 +12,7 @@ interface ILoginModal {
   className?: string;
 }
 
-export const LoginModal = ({ isOpen, onClose, className = '' }: ILoginModal) => (
+export const LoginModal = ({ isOpen, onClose, className }: ILoginModal) => (
     <Modal
         className={classNames('', {}, [className])}
         isOpen={isOpen}

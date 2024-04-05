@@ -17,7 +17,7 @@ interface LangSwitcherProps {
 
 export const LangSwitcher = memo((
     {
-        className = '',
+        className,
         short,
     }: LangSwitcherProps,
 ) => {

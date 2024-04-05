@@ -15,7 +15,7 @@ export default {
     component: ProfilePage,
 } as Meta<typeof ProfilePage>;
 
-const Template: StoryFn = (args) => <ProfilePage {...args} />;
+const Template: StoryFn = () => <ProfilePage />;
 
 export const Light = Template.bind({});
 Light.args = {};

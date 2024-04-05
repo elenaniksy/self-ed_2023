@@ -5,6 +5,7 @@ import cls from './Text.module.scss';
 export enum ETextTheme {
     PRIMARY = 'primary',
     ERROR = 'error',
+    INFO = 'info'
 }
 
 interface ITextProps {
@@ -15,7 +16,7 @@ interface ITextProps {
 }
 
 export const Text = memo(({
-    className = '',
+    className,
     text,
     title,
     theme = ETextTheme.PRIMARY,

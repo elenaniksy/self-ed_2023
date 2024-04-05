@@ -1,9 +1,10 @@
-// @ts-ignore
-import { DeepPartial } from '@reduxjs/toolkit';
 import { IStateSchema } from 'app/providers/StoreProvider';
 import {
     getLoginIsLoading,
-    getLoginError, getLoginState, getLoginUsername, getLoginPassword,
+    getLoginError,
+    getLoginState,
+    getLoginUsername,
+    getLoginPassword,
 } from './getLoginState';
 
 describe('getLoginState.test', () => {

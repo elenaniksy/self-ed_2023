@@ -1,8 +1,4 @@
 import { useDispatch } from 'react-redux';
-import { AppDispatch, IStateSchema } from 'app/providers/StoreProvider';
-import { ThunkDispatch, UnknownAction } from '@reduxjs/toolkit';
+import { AppDispatch } from 'app/providers/StoreProvider';
 
-export const useAppDispatch = (): ThunkDispatch<
-  IStateSchema,
-  AppDispatch,
-  UnknownAction> => useDispatch();
+export const useAppDispatch = () => useDispatch<AppDispatch>();

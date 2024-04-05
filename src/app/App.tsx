@@ -6,10 +6,12 @@ import { useTheme } from 'app/providers/ThemeProvider/lib/useTheme';
 import { AppRouter } from 'app/providers/Router';
 import { userActions } from 'entities/User';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useNavigate } from 'react-router-dom';
 
 function App() {
     const { theme } = useTheme();
     const dispatch = useAppDispatch();
+    const navigate = useNavigate();
 
     useEffect(() => {
         dispatch(userActions.initAuthData());

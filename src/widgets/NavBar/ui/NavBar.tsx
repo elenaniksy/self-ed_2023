@@ -13,7 +13,7 @@ interface NavBarProps {
   className?: string;
 }
 
-export const NavBar = memo(({ className = '' }: NavBarProps) => {
+export const NavBar = memo(({ className }: NavBarProps) => {
     const { t } = useTranslation('router');
     const [isAuthModal, setIsAuthModal] = useState<boolean>(false);
     const authData = useAppSelector(getUserAuthData);

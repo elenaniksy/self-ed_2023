@@ -11,7 +11,7 @@ interface IInput extends Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | '
 }
 
 export const Input = memo(({
-    classname = '',
+    classname,
     value,
     onChange,
     type = 'text',
